@@ -21,6 +21,115 @@
             <td>lowercase</td>
             <td>{{ nombre | lowercase}}</td>
         </tr>
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>slice:3</td>
+            <td>{{ nombre | slice:3}}</td>
+        </tr>
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>slice:0:3</td>
+            <td>{{ nombre | slice:0:3}}</td>
+        </tr>
+        <tr>
+            <td>{{ arr }}</td>
+            <td>slice:1:5</td>
+            <td>{{ arr | slice:1:5}}</td>
+        </tr>
+        <tr>
+            <td>{{ PI }}</td>
+            <td>number:'3.0-0'</td>
+            <td>{{ PI | number:'3.0-0'}}</td>
+        </tr>
+        <tr>
+            <td>{{ PI }}</td>
+            <td>number:'1.0-2'</td>
+            <td>{{ PI | number:'1.0-2'}}</td>
+        </tr>
+        <tr>
+            <td>{{ a }}</td>
+            <td>percent</td>
+            <td>{{ a | percent }}</td>
+        </tr>
+        <tr>
+            <td>{{ a }}</td>
+            <td>percent:'2.2-2'</td>
+            <td>{{ a | percent:'2.2-2'}}</td>
+        </tr>
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency</td>
+            <td>{{ sale | currency}}</td>
+        </tr>
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency:'USD':false</td>
+            <td>{{ sale | currency:'USD':false }}</td>
+        </tr>
+
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency:'ILS'</td>
+            <td>{{ sale | currency:'ILS' }}</td>
+        </tr>
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency:'ILS':false</td>
+            <td>{{ sale | currency:'ILS':false }}</td>
+        </tr>
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency:'ILS':true:'1.2-2' (with locale default that is 'es')</td>
+            <td>{{ sale | currency:'ILS':true:'1.2-2' }}</td>
+        </tr>
+
+        <tr>
+            <td>{{ sale }}</td>
+            <td>currency:'ILS':true:'1.2-2':''en-US'' (with locale 'en-US')</td>
+            <td>{{ sale | currency:'ILS':true:'1.2-2':'en-US' }}</td>
+        </tr>
+
+        <tr>
+            <td>{{ nombre2 }}</td>
+            <td>capitalize</td>
+            <td>{{ nombre2 | capitalize}}</td>
+        </tr>
+        <tr>
+            <td>{{ nombre2 }}</td>
+            <td>capitalize:false</td>
+            <td>{{ nombre2 | capitalize:false}}</td>
+        </tr>
+        <tr>
+            <td>{{ valueOfPromise }}</td>
+            <td>async</td>
+            <td>{{ valueOfPromise | async }}</td>
+        </tr>
+
+
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>
+                password:{{passwordActive}}
+                <br>
+                <button (click)="passwordActive = !passwordActive"
+                        type="button"
+                        class="btn btn-outline-primary"
+                >Activar/Desactivar
+                </button>
+            </td>
+            <td>{{ nombre | password:passwordActive}}</td>
+        </tr>
+
+
         </tbody>
     </table>
+
+    <br><br>
+    <hr>
+    <h4>JSON</h4>
+    <hr>
+    <pre>{{ objeto | json }}</pre>
+    <br><br>
+    <hr>
+    <iframe width="560" height="315" [src]="video_key | domsecure:'https://www.youtube.com/embed/'" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 </div>
